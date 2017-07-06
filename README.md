@@ -19,6 +19,14 @@ It required `rufo` gem to be installed and availble in path.
 gem install rufo
 ```
 
+## Configuration
+
+Enable formatting on every save (for Ruby files) with:
+
+```json
+  "rufo.formatOnSave": true // Default: false
+```
+
 ### Gotchas
 
 * It supports only the whole file formatting. Formatting a selected block of code is not supported yet.

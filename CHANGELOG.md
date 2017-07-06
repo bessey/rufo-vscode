@@ -6,6 +6,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 
 - Use STDIN for formatting to preserve undo, open the way for format on save.
+- Format on save (when enabled with configuration `rufo.formatOnSave`)!
 
 ## 0.0.3
 

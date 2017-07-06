@@ -1,53 +1,58 @@
 {
-    "name": "rufo-vscode",
-    "displayName": "rufo-vscode",
-    "description": "Ruby code formatter using rufo gem",
-    "version": "0.0.3",
-    "publisher": "siliconsenthil",
-    "engines": {
-        "vscode": "^1.13.0"
-    },
-    "categories": [
-        "Formatters"
+  "name": "rufo-vscode",
+  "displayName": "rufo-vscode",
+  "description": "Ruby code formatter using rufo gem",
+  "version": "0.0.3",
+  "publisher": "siliconsenthil",
+  "engines": {
+    "vscode": "^1.13.0"
+  },
+  "categories": ["Formatters"],
+  "keywords": ["ruby", "rufo", "formatting"],
+  "activationEvents": ["onCommand:extension.formatRuby", "onLanguage:ruby"],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.formatRuby",
+        "title": "Format ruby file"
+      }
     ],
-    "keywords":[
-      "ruby", "rufo", "formatting"
+    "keybindings": [
+      {
+        "command": "extension.formatRuby",
+        "key": "ctrl+shift+I",
+        "mac": "cmd+shift+I",
+        "when": "editorTextFocus"
+      }
     ],
-    "activationEvents": [
-        "onCommand:extension.formatRuby"
-    ],
-    "main": "./extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.formatRuby",
-                "title": "Format ruby file"
-            }
-        ],
-        "keybindings": [
-            {
-              "command": "extension.formatRuby",
-              "key": "ctrl+shift+I",
-              "mac": "cmd+shift+I",
-              "when": "editorTextFocus"
-            }
-        ]
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "eslint": "^3.6.0",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
-    },
-    "homepage": "https://github.com/siliconsenthil/rufo-vscode",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/siliconsenthil/rufo-vscode"
+    "configuration": {
+      "type": "object",
+      "title": "Rufo configuration",
+      "properties": {
+        "rufo.formatOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Wether to format on every save or not."
+        }
+      }
     }
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "eslint": "^3.6.0",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  },
+  "homepage": "https://github.com/siliconsenthil/rufo-vscode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siliconsenthil/rufo-vscode"
+  }
 }

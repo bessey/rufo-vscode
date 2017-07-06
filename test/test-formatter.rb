@@ -1,8 +1,10 @@
 class MyClass
-    def indent
-  "all_wrong"
+  def indent
+    "all_wrong"
   end
 
-    def eww
+  def eww
+    "thing"
   end
+
 end
